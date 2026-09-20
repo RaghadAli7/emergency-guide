@@ -71,3 +71,22 @@ This project was built from scratch using modern web technologies and demonstrat
    ```bash
    git clone https://github.com/RaghadAli7/emergency-guide.git
    cd emergency-guide
+   ## 📸 Screenshots
+
+### Welcome Page
+![Welcome Page](screenshots/welcome.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Emergency Cases
+![Emergency Cases](screenshots/emergencies.png)
+
+### Lessons
+![Lessons](screenshots/lessons.png)
+
+### Quizzes
+![Quizzes](screenshots/quizzes.png)
+
+### Certificate
+![Certificate](screenshots/certificate.png)
