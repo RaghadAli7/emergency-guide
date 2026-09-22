@@ -12,7 +12,7 @@ class QuizSeeder extends Seeder
         // اختبار 1: أساسيات الإسعافات الأولية
         $quiz1 = Quiz::create([
             'title' => 'أساسيات الإسعافات الأولية',
-            'description' => 'اختبار شامل لأساسيات الإسعافات الأولية',
+            'description' => 'اختبار شامل لأساسيات الإسعافات الأولية التي يجب على الجميع معرفتها',
         ]);
 
         $quiz1->questions()->createMany([
@@ -45,7 +45,7 @@ class QuizSeeder extends Seeder
         // اختبار 2: الإنعاش القلبي الرئوي
         $quiz2 = Quiz::create([
             'title' => 'الإنعاش القلبي الرئوي (CPR)',
-            'description' => 'اختبر معرفتك بالإنعاش القلبي الرئوي',
+            'description' => 'اختبر معرفتك بالإنعاش القلبي الرئوي للبالغين',
         ]);
 
         $quiz2->questions()->createMany([
@@ -78,7 +78,7 @@ class QuizSeeder extends Seeder
         // اختبار 3: الحروق والجروح
         $quiz3 = Quiz::create([
             'title' => 'الحروق والجروح',
-            'description' => 'كيفية التعامل مع الحروق والجروح',
+            'description' => 'كيفية التعامل مع الحروق والجروح بأنواعها',
         ]);
 
         $quiz3->questions()->createMany([
@@ -107,5 +107,7 @@ class QuizSeeder extends Seeder
                 'correct_option' => 2,
             ],
         ]);
+
+        $this->command->info('Quizzes seeded successfully!');
     }
 }

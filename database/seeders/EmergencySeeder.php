@@ -13,6 +13,7 @@ class EmergencySeeder extends Seeder
         $admin = User::where('type', 1)->first();
 
         if (!$admin) {
+            $this->command->warn('No admin user found. Please create one first.');
             return;
         }
 
@@ -58,5 +59,7 @@ class EmergencySeeder extends Seeder
                 'status' => 'pending',
             ]);
         }
+
+        $this->command->info('Emergencies seeded successfully!');
     }
 }

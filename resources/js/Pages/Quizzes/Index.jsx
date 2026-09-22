@@ -46,45 +46,56 @@ export default function Index() {
                             {quizzes.map((quiz) => (
                                 <div
                                     key={quiz.id}
-                                    className="rounded-lg bg-white p-6 shadow-md hover:shadow-lg"
+                                    className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition hover:shadow-xl"
                                 >
-                                    <h5 className="mb-2 text-lg font-semibold text-gray-800">
-                                        {quiz.title}
-                                    </h5>
-                                    <p className="mb-2 text-gray-600">
-                                        {quiz.description}
-                                    </p>
-                                    <p className="mb-4 text-sm text-gray-500">
-                                        عدد الأسئلة: {quiz.questions?.length || 0}
-                                    </p>
+                                    {/* صورة/أيقونة الاختبار */}
+                                    <div className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100">
+                                        <span className="text-7xl">📝</span>
+                                    </div>
 
-                                    <button
-                                        onClick={() =>
-                                            (window.location.href = `/quizzes/${quiz.id}/take`)
-                                        }
-                                        className="mb-2 w-full rounded-lg bg-green-600 px-3 py-2 text-sm text-white hover:bg-green-700"
-                                    >
-                                        ابدأ الاختبار
-                                    </button>
+                                    <div className="flex flex-1 flex-col p-6">
+                                        <h5 className="mb-2 text-lg font-semibold text-gray-800">
+                                            {quiz.title}
+                                        </h5>
+                                        <p className="mb-4 flex-1 text-gray-600 line-clamp-3">
+                                            {quiz.description || 'لا يوجد وصف'}
+                                        </p>
 
-                                    {isAdmin && (
-                                        <div className="flex gap-2">
+                                        {/* عدد الأسئلة */}
+                                        <p className="mb-4 text-sm text-gray-500">
+                                            📋 عدد الأسئلة: {quiz.questions?.length || 0}
+                                        </p>
+
+                                        <div className="mt-auto flex flex-col gap-2">
                                             <button
                                                 onClick={() =>
-                                                    (window.location.href = `/quizzes/${quiz.id}/edit`)
+                                                    (window.location.href = `/quizzes/${quiz.id}/take`)
                                                 }
-                                                className="flex-1 rounded-lg bg-yellow-500 px-3 py-1.5 text-sm text-white hover:bg-yellow-600"
+                                                className="w-full rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
                                             >
-                                                تعديل
+                                                ابدأ الاختبار
                                             </button>
-                                            <button
-                                                onClick={() => handleDelete(quiz.id)}
-                                                className="flex-1 rounded-lg bg-red-600 px-3 py-1.5 text-sm text-white hover:bg-red-700"
-                                            >
-                                                حذف
-                                            </button>
+
+                                            {isAdmin && (
+                                                <div className="flex gap-2">
+                                                    <button
+                                                        onClick={() =>
+                                                            (window.location.href = `/quizzes/${quiz.id}/edit`)
+                                                        }
+                                                        className="flex-1 rounded-lg bg-yellow-500 px-3 py-1.5 text-sm text-white hover:bg-yellow-600"
+                                                    >
+                                                        تعديل
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleDelete(quiz.id)}
+                                                        className="flex-1 rounded-lg bg-red-600 px-3 py-1.5 text-sm text-white hover:bg-red-700"
+                                                    >
+                                                        حذف
+                                                    </button>
+                                                </div>
+                                            )}
                                         </div>
-                                    )}
+                                    </div>
                                 </div>
                             ))}
                         </div>

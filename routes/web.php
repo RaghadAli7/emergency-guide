@@ -105,4 +105,10 @@ Route::get('/certificate', function () {
         'date' => now()->format('Y-m-d'),
     ]);
 })->middleware(['auth', 'verified'])->name('certificate');
+Route::get('/lessons/{id}', function ($id) {
+    $lesson = \App\Models\Lesson::findOrFail($id);
+    return Inertia::render('Lessons/Show', [
+        'lesson' => $lesson,
+    ]);
+})->middleware(['auth', 'verified'])->name('lessons.show');
 require __DIR__.'/auth.php';

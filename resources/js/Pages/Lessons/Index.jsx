@@ -44,32 +44,59 @@ export default function Index() {
                             {lessons.map((lesson) => (
                                 <div
                                     key={lesson.id}
-                                    className="rounded-lg bg-white p-6 shadow-md hover:shadow-lg"
+                                    className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition hover:shadow-xl"
                                 >
-                                    <h5 className="mb-2 text-lg font-semibold text-gray-800">
-                                        {lesson.title}
-                                    </h5>
-                                    <p className="mb-4 text-gray-600 line-clamp-3">
-                                        {lesson.content}
-                                    </p>
-                                    {isAdmin && (
-                                        <div className="flex gap-2">
-                                            <button
-                                                onClick={() =>
-                                                    (window.location.href = `/lessons/${lesson.id}/edit`)
-                                                }
-                                                className="rounded-lg bg-yellow-500 px-3 py-1.5 text-sm text-white hover:bg-yellow-600"
-                                            >
-                                                تعديل
-                                            </button>
-                                            <button
-                                                onClick={() => handleDelete(lesson.id)}
-                                                className="rounded-lg bg-red-600 px-3 py-1.5 text-sm text-white hover:bg-red-700"
-                                            >
-                                                حذف
-                                            </button>
+                                    {/* صورة الدرس */}
+                                    {lesson.image ? (
+                                        <img
+                                            src={lesson.image}
+                                            alt={lesson.title}
+                                            className="h-48 w-full object-cover"
+                                        />
+                                    ) : (
+                                        <div className="flex h-48 w-full items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200">
+                                            <span className="text-6xl">📚</span>
                                         </div>
                                     )}
+
+                                    <div className="flex flex-1 flex-col p-6">
+                                        <h5 className="mb-2 text-lg font-semibold text-gray-800">
+                                            {lesson.title}
+                                        </h5>
+                                        <p className="mb-4 flex-1 text-gray-600 line-clamp-3">
+                                            {lesson.content}
+                                        </p>
+
+                                        <div className="mt-auto flex flex-col gap-2">
+                                            <button
+                                                onClick={() =>
+                                                    (window.location.href = `/lessons/${lesson.id}`)
+                                                }
+                                                className="w-full rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                                            >
+                                                اقرأ المزيد
+                                            </button>
+
+                                            {isAdmin && (
+                                                <div className="flex gap-2">
+                                                    <button
+                                                        onClick={() =>
+                                                            (window.location.href = `/lessons/${lesson.id}/edit`)
+                                                        }
+                                                        className="flex-1 rounded-lg bg-yellow-300 px-3 py-1.5 text-sm text-white hover:bg-yellow-400"
+                                                    >
+                                                        تعديل
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleDelete(lesson.id)}
+                                                        className="flex-1 rounded-lg bg-red-600 px-3 py-1.5 text-sm text-white hover:bg-red-700"
+                                                    >
+                                                        حذف
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
                         </div>
