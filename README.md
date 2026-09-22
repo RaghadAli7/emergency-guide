@@ -90,3 +90,6 @@ This project was built from scratch using modern web technologies and demonstrat
 
 ### Certificate
 ![Certificate](screenshots/certificate.png)
+
+### quiz-results
+![quiz-results](screenshots/quiz-results.png)

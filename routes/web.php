@@ -111,4 +111,7 @@ Route::get('/lessons/{id}', function ($id) {
         'lesson' => $lesson,
     ]);
 })->middleware(['auth', 'verified'])->name('lessons.show');
+Route::get('/about', function () {
+    return Inertia::render('About');
+})->name('about');
 require __DIR__.'/auth.php';

@@ -27,6 +27,9 @@ export default function AuthenticatedLayout({ children }) {
                             <Link href="/dashboard" className="text-gray-700 hover:text-blue-600 px-3 py-2">
                                 لوحة التحكم
                             </Link>
+                            <Link href="/about" className="text-gray-700 hover:text-blue-600 px-3 py-2">
+    من نحن
+</Link>
                             <Link href="/emergencies" className="text-gray-700 hover:text-blue-600 px-3 py-2">
                                 الحالات
                             </Link>

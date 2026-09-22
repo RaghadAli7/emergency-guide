@@ -18,30 +18,30 @@ export default function Welcome({ auth }) {
                                 <h1 className="text-2xl font-bold text-blue-600">أنقذني</h1>
                             </div>
                             <div className="flex items-center gap-4">
-                                {isLoggedIn ? (
-                                    <Link
-                                        href="/dashboard"
-                                        className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
-                                    >
-                                        لوحة التحكم
-                                    </Link>
-                                ) : (
-                                    <>
-                                        <Link
-                                            href="/login"
-                                            className="text-gray-700 hover:text-blue-600"
-                                        >
-                                            تسجيل الدخول
-                                        </Link>
-                                        <Link
-                                            href="/register"
-                                            className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
-                                        >
-                                            إنشاء حساب
-                                        </Link>
-                                    </>
-                                )}
-                            </div>
+    <Link href="/about" className="text-gray-700 hover:text-blue-600">
+        من نحن
+    </Link>
+    {isLoggedIn ? (
+        <Link
+            href="/dashboard"
+            className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+        >
+            لوحة التحكم
+        </Link>
+    ) : (
+        <>
+            <Link href="/login" className="text-gray-700 hover:text-blue-600">
+                تسجيل الدخول
+            </Link>
+            <Link
+                href="/register"
+                className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            >
+                إنشاء حساب
+            </Link>
+        </>
+    )}
+</div>
                         </div>
                     </div>
                 </header>
