@@ -58,6 +58,19 @@ This project was built from scratch using modern web technologies and demonstrat
 ---
 
 ## 🚀 Installation
+## 🐳 Docker Setup
+
+You can run this project using Docker and Docker Compose.
+
+### Prerequisites
+- Docker Desktop installed
+
+### Steps
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/RaghadAli7/emergency-guide.git
+   cd emergency-guide
 
 ### Prerequisites
 - PHP 8.2+
