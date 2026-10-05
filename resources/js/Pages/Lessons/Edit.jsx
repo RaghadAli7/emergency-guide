@@ -26,7 +26,7 @@ export default function Edit() {
             window.location.href = '/lessons';
         } catch (error) {
             console.error(error);
-            alert('حدث خطأ أثناء التعديل');
+            alert('An error occurred while updating');
         } finally {
             setIsSubmitting(false);
         }
@@ -34,12 +34,12 @@ export default function Edit() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="تعديل الدرس" />
+            <Head title="Edit Lesson" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-2xl px-4">
                     <h1 className="mb-8 text-3xl font-bold text-gray-900">
-                        تعديل الدرس
+                        Edit Lesson
                     </h1>
 
                     <form
@@ -48,7 +48,7 @@ export default function Edit() {
                     >
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                عنوان الدرس
+                                Lesson Title
                             </label>
                             <input
                                 type="text"
@@ -62,7 +62,7 @@ export default function Edit() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                محتوى الدرس
+                                Lesson Content
                             </label>
                             <textarea
                                 name="content"
@@ -76,7 +76,7 @@ export default function Edit() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                رابط الفيديو (اختياري)
+                                Video URL (Optional)
                             </label>
                             <input
                                 type="url"
@@ -93,13 +93,13 @@ export default function Edit() {
                                 disabled={isSubmitting}
                                 className="flex-1 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 disabled:opacity-50"
                             >
-                                {isSubmitting ? 'جاري الحفظ...' : 'حفظ التعديلات'}
+                                {isSubmitting ? 'Saving...' : 'Save Changes'}
                             </button>
                             <Link
                                 href="/lessons"
                                 className="flex-1 rounded-lg bg-gray-500 px-6 py-3 text-center font-medium text-white hover:bg-gray-600"
                             >
-                                إلغاء
+                                Cancel
                             </Link>
                         </div>
                     </form>

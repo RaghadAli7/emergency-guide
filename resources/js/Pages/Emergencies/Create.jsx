@@ -24,7 +24,7 @@ export default function Create() {
             window.location.href = '/emergencies';
         } catch (error) {
             console.error(error);
-            alert('حدث خطأ أثناء الإضافة');
+            alert('An error occurred while adding');
         } finally {
             setIsSubmitting(false);
         }
@@ -32,12 +32,12 @@ export default function Create() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="إضافة حالة طارئة" />
+            <Head title="Add Emergency Case" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-2xl px-4">
                     <h1 className="mb-8 text-3xl font-bold text-gray-900">
-                        إضافة حالة طارئة جديدة
+                        Add New Emergency Case
                     </h1>
 
                     <form
@@ -49,7 +49,7 @@ export default function Create() {
                                 htmlFor="emergency_type"
                                 className="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                نوع الطارئة
+                                Emergency Type
                             </label>
                             <select
                                 id="emergency_type"
@@ -59,11 +59,11 @@ export default function Create() {
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                             >
-                                <option value="">اختر</option>
-                                <option value="حادث مروري">حادث مروري</option>
-                                <option value="إصابة خطيرة">إصابة خطيرة</option>
-                                <option value="حريق">حريق</option>
-                                <option value="حالة طبية طارئة">حالة طبية طارئة</option>
+                                <option value="">Select</option>
+                                <option value="Traffic Accident">Traffic Accident</option>
+                                <option value="Serious Injury">Serious Injury</option>
+                                <option value="Fire">Fire</option>
+                                <option value="Medical Emergency">Medical Emergency</option>
                             </select>
                         </div>
 
@@ -72,7 +72,7 @@ export default function Create() {
                                 htmlFor="location"
                                 className="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                الموقع
+                                Location
                             </label>
                             <input
                                 type="text"
@@ -81,7 +81,7 @@ export default function Create() {
                                 value={form.location}
                                 onChange={handleChange}
                                 required
-                                placeholder="أدخل الموقع بالتفصيل"
+                                placeholder="Enter the location in detail"
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -91,7 +91,7 @@ export default function Create() {
                                 htmlFor="description"
                                 className="mb-2 block text-sm font-medium text-gray-700"
                             >
-                                الوصف (اختياري)
+                                Description (Optional)
                             </label>
                             <textarea
                                 id="description"
@@ -99,7 +99,7 @@ export default function Create() {
                                 rows="4"
                                 value={form.description}
                                 onChange={handleChange}
-                                placeholder="أدخل وصفاً تفصيلياً للحالة"
+                                placeholder="Enter a detailed description of the case"
                                 className="w-full resize-none rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -110,13 +110,13 @@ export default function Create() {
                                 disabled={isSubmitting}
                                 className="flex-1 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                             >
-                                {isSubmitting ? 'جاري الحفظ...' : 'حفظ الحالة'}
+                                {isSubmitting ? 'Saving...' : 'Save Case'}
                             </button>
                             <Link
                                 href="/emergencies"
                                 className="flex-1 rounded-lg bg-gray-500 px-6 py-3 text-center font-medium text-white transition hover:bg-gray-600"
                             >
-                                إلغاء
+                                Cancel
                             </Link>
                         </div>
                     </form>

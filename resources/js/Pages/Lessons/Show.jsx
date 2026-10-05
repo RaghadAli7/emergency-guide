@@ -11,17 +11,17 @@ export default function Show() {
 
             <div className="py-12">
                 <div className="mx-auto max-w-4xl px-4">
-                    {/* زر الرجوع */}
+                    {/* Back Button */}
                     <Link
                         href="/lessons"
                         className="mb-6 inline-block text-blue-600 hover:text-blue-800"
                     >
-                        ← العودة للدروس
+                        ← Back to Lessons
                     </Link>
 
-                    {/* البطاقة الرئيسية */}
+                    {/* Main Card */}
                     <div className="overflow-hidden rounded-xl bg-white shadow-lg">
-                        {/* صورة الدرس */}
+                        {/* Lesson Image */}
                         {lesson.image ? (
                             <img
                                 src={lesson.image}
@@ -39,18 +39,18 @@ export default function Show() {
                                 {lesson.title}
                             </h1>
 
-                            {/* محتوى الدرس */}
+                            {/* Lesson Content */}
                             <div className="prose prose-lg max-w-none">
                                 <p className="whitespace-pre-line leading-relaxed text-gray-700">
                                     {lesson.content}
                                 </p>
                             </div>
 
-                            {/* رابط الفيديو */}
+                            {/* Video Link */}
                             {lesson.video_url && (
                                 <div className="mt-8 border-t border-gray-200 pt-6">
                                     <h3 className="mb-4 text-xl font-bold text-gray-800">
-                                        🎥 فيديو توضيحي
+                                        🎥 Video Tutorial
                                     </h3>
                                     <a
                                         href={lesson.video_url}
@@ -58,7 +58,7 @@ export default function Show() {
                                         rel="noopener noreferrer"
                                         className="inline-block rounded-lg bg-red-600 px-6 py-3 text-white hover:bg-red-700"
                                     >
-                                        مشاهدة الفيديو على YouTube
+                                        Watch Video on YouTube
                                     </a>
                                 </div>
                             )}

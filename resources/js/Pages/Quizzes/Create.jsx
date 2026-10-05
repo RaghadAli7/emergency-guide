@@ -54,7 +54,7 @@ export default function Create() {
             window.location.href = '/quizzes';
         } catch (error) {
             console.error(error);
-            alert('حدث خطأ أثناء الإضافة');
+            alert('An error occurred while adding');
         } finally {
             setIsSubmitting(false);
         }
@@ -62,12 +62,12 @@ export default function Create() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="إضافة اختبار جديد" />
+            <Head title="Add New Quiz" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-4xl px-4">
                     <h1 className="mb-8 text-3xl font-bold text-gray-900">
-                        إضافة اختبار جديد
+                        Add New Quiz
                     </h1>
 
                     <form
@@ -76,7 +76,7 @@ export default function Create() {
                     >
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                عنوان الاختبار
+                                Quiz Title
                             </label>
                             <input
                                 type="text"
@@ -90,7 +90,7 @@ export default function Create() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                الوصف (اختياري)
+                                Description (Optional)
                             </label>
                             <textarea
                                 name="description"
@@ -101,7 +101,7 @@ export default function Create() {
                             />
                         </div>
 
-                        <h3 className="text-xl font-bold text-gray-900">الأسئلة</h3>
+                        <h3 className="text-xl font-bold text-gray-900">Questions</h3>
 
                         {questions.map((q, index) => (
                             <div
@@ -110,7 +110,7 @@ export default function Create() {
                             >
                                 <div className="flex items-center justify-between">
                                     <h4 className="font-bold text-gray-700">
-                                        سؤال {index + 1}
+                                        Question {index + 1}
                                     </h4>
                                     {questions.length > 1 && (
                                         <button
@@ -118,14 +118,14 @@ export default function Create() {
                                             onClick={() => removeQuestion(index)}
                                             className="text-red-600 hover:text-red-800"
                                         >
-                                            حذف السؤال
+                                            Remove Question
                                         </button>
                                     )}
                                 </div>
 
                                 <input
                                     type="text"
-                                    placeholder="نص السؤال"
+                                    placeholder="Question text"
                                     value={q.question}
                                     onChange={(e) =>
                                         handleQuestionChange(
@@ -141,7 +141,7 @@ export default function Create() {
                                 <div className="grid grid-cols-2 gap-4">
                                     <input
                                         type="text"
-                                        placeholder="الخيار 1"
+                                        placeholder="Option 1"
                                         value={q.option1}
                                         onChange={(e) =>
                                             handleQuestionChange(
@@ -155,7 +155,7 @@ export default function Create() {
                                     />
                                     <input
                                         type="text"
-                                        placeholder="الخيار 2"
+                                        placeholder="Option 2"
                                         value={q.option2}
                                         onChange={(e) =>
                                             handleQuestionChange(
@@ -169,7 +169,7 @@ export default function Create() {
                                     />
                                     <input
                                         type="text"
-                                        placeholder="الخيار 3"
+                                        placeholder="Option 3"
                                         value={q.option3}
                                         onChange={(e) =>
                                             handleQuestionChange(
@@ -183,7 +183,7 @@ export default function Create() {
                                     />
                                     <input
                                         type="text"
-                                        placeholder="الخيار 4"
+                                        placeholder="Option 4"
                                         value={q.option4}
                                         onChange={(e) =>
                                             handleQuestionChange(
@@ -199,7 +199,7 @@ export default function Create() {
 
                                 <div>
                                     <label className="mb-1 block text-sm text-gray-600">
-                                        الإجابة الصحيحة
+                                        Correct Answer
                                     </label>
                                     <select
                                         value={q.correct_option}
@@ -212,10 +212,10 @@ export default function Create() {
                                         }
                                         className="rounded-lg border border-gray-300 px-4 py-2"
                                     >
-                                        <option value="1">الخيار 1</option>
-                                        <option value="2">الخيار 2</option>
-                                        <option value="3">الخيار 3</option>
-                                        <option value="4">الخيار 4</option>
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                        <option value="4">Option 4</option>
                                     </select>
                                 </div>
                             </div>
@@ -226,7 +226,7 @@ export default function Create() {
                             onClick={addQuestion}
                             className="rounded-lg bg-gray-200 px-4 py-2 text-gray-800 hover:bg-gray-300"
                         >
-                            إضافة سؤال
+                            Add Question
                         </button>
 
                         <div className="flex gap-4 pt-4">
@@ -235,13 +235,13 @@ export default function Create() {
                                 disabled={isSubmitting}
                                 className="flex-1 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 disabled:opacity-50"
                             >
-                                {isSubmitting ? 'جاري الحفظ...' : 'حفظ الاختبار'}
+                                {isSubmitting ? 'Saving...' : 'Save Quiz'}
                             </button>
                             <Link
                                 href="/quizzes"
                                 className="flex-1 rounded-lg bg-gray-500 px-6 py-3 text-center font-medium text-white hover:bg-gray-600"
                             >
-                                إلغاء
+                                Cancel
                             </Link>
                         </div>
                     </form>

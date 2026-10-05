@@ -11,7 +11,7 @@ export default function Certificate() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="الشهادة" />
+            <Head title="Certificate" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-4xl px-4">
@@ -21,29 +21,29 @@ export default function Certificate() {
                     >
                         <div className="text-center">
                             <h1 className="mb-2 text-5xl font-bold text-blue-900">
-                                شهادة إتمام
+                                Certificate of Completion
                             </h1>
                             <h2 className="mb-8 text-2xl text-gray-600">
-                                الإسعافات الأولية
+                                First Aid
                             </h2>
 
                             <div className="my-8 border-t-2 border-b-2 border-yellow-500 py-8">
                                 <p className="mb-4 text-xl text-gray-700">
-                                    تُمنح هذه الشهادة إلى
+                                    This certificate is awarded to
                                 </p>
                                 <p className="mb-4 text-4xl font-bold text-blue-900">
                                     {user.name}
                                 </p>
                                 <p className="text-lg text-gray-700">
-                                    لاجتيازه بنجاح{' '}
-                                    <strong>{passedCount}</strong> اختبارات في مجال
-                                    الإسعافات الأولية
+                                    for successfully passing{' '}
+                                    <strong>{passedCount}</strong> quizzes in the field of
+                                    First Aid
                                 </p>
                             </div>
 
                             <div className="mt-12 flex items-center justify-between">
                                 <div className="text-center">
-                                    <p className="text-sm text-gray-500">التاريخ</p>
+                                    <p className="text-sm text-gray-500">Date</p>
                                     <p className="font-bold text-gray-800">{date}</p>
                                 </div>
                                 <div className="text-center">
@@ -54,9 +54,9 @@ export default function Certificate() {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <p className="text-sm text-gray-500">التوقيع</p>
+                                    <p className="text-sm text-gray-500">Signature</p>
                                     <p className="border-t-2 border-gray-400 pt-1 font-bold text-gray-800">
-                                        إدارة النظام
+                                        System Administration
                                     </p>
                                 </div>
                             </div>
@@ -68,13 +68,13 @@ export default function Certificate() {
                             onClick={printCertificate}
                             className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
                         >
-                            🖨️ طباعة الشهادة
+                            🖨️ Print Certificate
                         </button>
                         <a
                             href="/quiz-results"
                             className="rounded-lg bg-gray-500 px-6 py-3 font-medium text-white hover:bg-gray-600"
                         >
-                            العودة للنتائج
+                            Back to Results
                         </a>
                     </div>
                 </div>

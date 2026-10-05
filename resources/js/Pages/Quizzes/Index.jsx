@@ -8,26 +8,26 @@ export default function Index() {
     const isAdmin = auth?.user?.type === 1;
 
     const handleDelete = async (id) => {
-        if (confirm('هل أنت متأكد من حذف هذا الاختبار؟')) {
+        if (confirm('Are you sure you want to delete this quiz?')) {
             try {
                 await axios.delete(`/api/quizzes/${id}`);
                 window.location.href = '/quizzes';
             } catch (error) {
                 console.error(error);
-                alert('حدث خطأ أثناء الحذف');
+                alert('An error occurred while deleting');
             }
         }
     };
 
     return (
         <AuthenticatedLayout>
-            <Head title="الاختبارات" />
+            <Head title="Quizzes" />
 
             <div className="py-6">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-6 flex items-center justify-between">
                         <h1 className="text-2xl font-bold text-gray-900">
-                            الاختبارات
+                            Quizzes
                         </h1>
                         {isAdmin && (
                             <button
@@ -36,7 +36,7 @@ export default function Index() {
                                 }
                                 className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
                             >
-                                إضافة اختبار جديد
+                                Add New Quiz
                             </button>
                         )}
                     </div>
@@ -48,7 +48,7 @@ export default function Index() {
                                     key={quiz.id}
                                     className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition hover:shadow-xl"
                                 >
-                                    {/* صورة/أيقونة الاختبار */}
+                                    {/* Image/Icon */}
                                     <div className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-purple-100 to-pink-100">
                                         <span className="text-7xl">📝</span>
                                     </div>
@@ -58,12 +58,12 @@ export default function Index() {
                                             {quiz.title}
                                         </h5>
                                         <p className="mb-4 flex-1 text-gray-600 line-clamp-3">
-                                            {quiz.description || 'لا يوجد وصف'}
+                                            {quiz.description || 'No description'}
                                         </p>
 
-                                        {/* عدد الأسئلة */}
+                                        {/* Number of Questions */}
                                         <p className="mb-4 text-sm text-gray-500">
-                                            📋 عدد الأسئلة: {quiz.questions?.length || 0}
+                                            📋 Questions: {quiz.questions?.length || 0}
                                         </p>
 
                                         <div className="mt-auto flex flex-col gap-2">
@@ -73,7 +73,7 @@ export default function Index() {
                                                 }
                                                 className="w-full rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
                                             >
-                                                ابدأ الاختبار
+                                                Start Quiz
                                             </button>
 
                                             {isAdmin && (
@@ -84,13 +84,13 @@ export default function Index() {
                                                         }
                                                         className="flex-1 rounded-lg bg-yellow-500 px-3 py-1.5 text-sm text-white hover:bg-yellow-600"
                                                     >
-                                                        تعديل
+                                                        Edit
                                                     </button>
                                                     <button
                                                         onClick={() => handleDelete(quiz.id)}
                                                         className="flex-1 rounded-lg bg-red-600 px-3 py-1.5 text-sm text-white hover:bg-red-700"
                                                     >
-                                                        حذف
+                                                        Delete
                                                     </button>
                                                 </div>
                                             )}
@@ -101,7 +101,7 @@ export default function Index() {
                         </div>
                     ) : (
                         <p className="py-12 text-center text-gray-500">
-                            لا توجد اختبارات بعد.
+                            No quizzes yet.
                         </p>
                     )}
                 </div>

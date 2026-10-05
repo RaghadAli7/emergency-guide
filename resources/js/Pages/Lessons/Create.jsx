@@ -24,13 +24,13 @@ export default function Create() {
             await axios.post('/api/lessons', form);
             window.location.href = '/lessons';
         } catch (error) {
-            console.error('تفاصيل الخطأ:', error);
+            console.error('Error details:', error);
             if (error.response) {
                 alert(
-                    `خطأ ${error.response.status}: ${JSON.stringify(error.response.data)}`
+                    `Error ${error.response.status}: ${JSON.stringify(error.response.data)}`
                 );
             } else {
-                alert('حدث خطأ أثناء الإضافة');
+                alert('An error occurred while adding');
             }
         } finally {
             setIsSubmitting(false);
@@ -39,12 +39,12 @@ export default function Create() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="إضافة درس جديد" />
+            <Head title="Add New Lesson" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-2xl px-4">
                     <h1 className="mb-8 text-3xl font-bold text-gray-900">
-                        إضافة درس جديد
+                        Add New Lesson
                     </h1>
 
                     <form
@@ -53,7 +53,7 @@ export default function Create() {
                     >
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                عنوان الدرس
+                                Lesson Title
                             </label>
                             <input
                                 type="text"
@@ -67,7 +67,7 @@ export default function Create() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                محتوى الدرس
+                                Lesson Content
                             </label>
                             <textarea
                                 name="content"
@@ -81,7 +81,7 @@ export default function Create() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                رابط الفيديو (اختياري)
+                                Video URL (Optional)
                             </label>
                             <input
                                 type="url"
@@ -94,14 +94,14 @@ export default function Create() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                رابط الصورة (اختياري)
+                                Image URL (Optional)
                             </label>
                             <input
                                 type="text"
                                 name="image"
                                 value={form.image}
                                 onChange={handleChange}
-                                placeholder="أدخل رابط الصورة"
+                                placeholder="Enter the image URL"
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
                             />
                         </div>
@@ -112,13 +112,13 @@ export default function Create() {
                                 disabled={isSubmitting}
                                 className="flex-1 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700 disabled:opacity-50"
                             >
-                                {isSubmitting ? 'جاري الحفظ...' : 'حفظ'}
+                                {isSubmitting ? 'Saving...' : 'Save'}
                             </button>
                             <Link
                                 href="/lessons"
                                 className="flex-1 rounded-lg bg-gray-500 px-6 py-3 text-center font-medium text-white hover:bg-gray-600"
                             >
-                                إلغاء
+                                Cancel
                             </Link>
                         </div>
                     </form>

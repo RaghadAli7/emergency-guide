@@ -28,9 +28,9 @@ export default function Results() {
     if (loading) {
         return (
             <AuthenticatedLayout>
-                <Head title="نتائج الاختبارات" />
+                <Head title="Quiz Results" />
                 <div className="flex min-h-[60vh] items-center justify-center">
-                    <p className="text-gray-500">جاري التحميل...</p>
+                    <p className="text-gray-500">Loading...</p>
                 </div>
             </AuthenticatedLayout>
         );
@@ -38,25 +38,24 @@ export default function Results() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="نتائج الاختبارات" />
+            <Head title="Quiz Results" />
 
             <div className="py-6">
                 <div className="mx-auto max-w-7xl px-4">
                     <h1 className="mb-6 text-2xl font-bold text-gray-900">
-                        نتائج الاختبارات
+                        Quiz Results
                     </h1>
 
                     {eligibleForCertificate && (
                         <div className="mb-6 rounded border-l-4 border-green-500 bg-green-100 p-4">
                             <p className="mb-2 font-bold text-green-800">
-                                🎉 مبروك! لقد اجتزت {passedCount} اختبارات. يمكنك الحصول
-                                على الشهادة الآن!
+                                🎉 Congratulations! You have passed {passedCount} quizzes. You can get your certificate now!
                             </p>
                             <a
                                 href="/certificate"
                                 className="inline-block rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-700"
                             >
-                                🎓 عرض الشهادة
+                                🎓 View Certificate
                             </a>
                         </div>
                     )}
@@ -66,20 +65,20 @@ export default function Results() {
                             <table className="w-full">
                                 <thead className="bg-gray-50">
                                     <tr>
-                                        <th className="px-6 py-3 text-right text-xs font-medium uppercase text-gray-500">
-                                            الاختبار
+                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+                                            Quiz
                                         </th>
-                                        <th className="px-6 py-3 text-right text-xs font-medium uppercase text-gray-500">
-                                            المستخدم
+                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+                                            User
                                         </th>
-                                        <th className="px-6 py-3 text-right text-xs font-medium uppercase text-gray-500">
-                                            النتيجة
+                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+                                            Score
                                         </th>
-                                        <th className="px-6 py-3 text-right text-xs font-medium uppercase text-gray-500">
-                                            النسبة
+                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+                                            Percentage
                                         </th>
-                                        <th className="px-6 py-3 text-right text-xs font-medium uppercase text-gray-500">
-                                            التاريخ
+                                        <th className="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500">
+                                            Date
                                         </th>
                                     </tr>
                                 </thead>
@@ -90,7 +89,7 @@ export default function Results() {
                                                 {result.quiz?.title || '—'}
                                             </td>
                                             <td className="px-6 py-4">
-                                                {result.user?.name || 'أنا'}
+                                                {result.user?.name || 'Me'}
                                             </td>
                                             <td className="px-6 py-4">
                                                 {result.score} / {result.total}
@@ -109,7 +108,7 @@ export default function Results() {
                                             <td className="px-6 py-4 text-sm text-gray-500">
                                                 {new Date(
                                                     result.created_at
-                                                ).toLocaleDateString('ar-EG')}
+                                                ).toLocaleDateString('en-US')}
                                             </td>
                                         </tr>
                                     ))}
@@ -118,7 +117,7 @@ export default function Results() {
                         </div>
                     ) : (
                         <p className="py-12 text-center text-gray-500">
-                            لا توجد نتائج بعد.
+                            No results yet.
                         </p>
                     )}
                 </div>

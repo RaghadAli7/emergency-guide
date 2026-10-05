@@ -19,34 +19,34 @@ class EmergencySeeder extends Seeder
 
         $emergencies = [
             [
-                'emergency_type' => 'حادث مروري',
-                'location' => 'شارع الملك فيصل، دمشق',
-                'description' => 'تصادم بين سيارتين، إصابات متوسطة',
+                'emergency_type' => 'Traffic Accident',
+                'location' => 'King Faisal Street, Damascus',
+                'description' => 'Collision between two cars, moderate injuries',
             ],
             [
-                'emergency_type' => 'إصابة خطيرة',
-                'location' => 'حي المزة، دمشق',
-                'description' => 'سقوط من ارتفاع، إصابة في الرأس',
+                'emergency_type' => 'Serious Injury',
+                'location' => 'Al-Mazzeh District, Damascus',
+                'description' => 'Fall from height, head injury',
             ],
             [
-                'emergency_type' => 'حريق',
-                'location' => 'سوق الحميدية، دمشق',
-                'description' => 'حريق في محل تجاري',
+                'emergency_type' => 'Fire',
+                'location' => 'Al-Hamidiyah Souq, Damascus',
+                'description' => 'Fire in a commercial shop',
             ],
             [
-                'emergency_type' => 'حالة طبية طارئة',
-                'location' => 'شارع بغداد، دمشق',
-                'description' => 'أزمة قلبية لرجل مسن',
+                'emergency_type' => 'Medical Emergency',
+                'location' => 'Baghdad Street, Damascus',
+                'description' => 'Heart attack for an elderly man',
             ],
             [
-                'emergency_type' => 'حادث مروري',
-                'location' => 'طريق المطار، دمشق',
-                'description' => 'انقلاب شاحنة، مصابون متعددون',
+                'emergency_type' => 'Traffic Accident',
+                'location' => 'Airport Road, Damascus',
+                'description' => 'Truck overturned, multiple injuries',
             ],
             [
-                'emergency_type' => 'إصابة خطيرة',
-                'location' => 'الملعب البلدي، دمشق',
-                'description' => 'كسر في الساق أثناء مباراة كرة قدم',
+                'emergency_type' => 'Serious Injury',
+                'location' => 'Municipal Stadium, Damascus',
+                'description' => 'Leg fracture during a football match',
             ],
         ];
 

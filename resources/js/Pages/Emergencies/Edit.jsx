@@ -26,7 +26,7 @@ export default function Edit() {
             window.location.href = '/emergencies';
         } catch (error) {
             console.error(error);
-            alert('حدث خطأ أثناء التعديل');
+            alert('An error occurred while updating');
         } finally {
             setIsSubmitting(false);
         }
@@ -34,12 +34,12 @@ export default function Edit() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="تعديل حالة طارئة" />
+            <Head title="Edit Emergency Case" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-2xl px-4">
                     <h1 className="mb-8 text-3xl font-bold text-gray-900">
-                        تعديل حالة طارئة
+                        Edit Emergency Case
                     </h1>
 
                     <form
@@ -48,7 +48,7 @@ export default function Edit() {
                     >
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                نوع الطارئة
+                                Emergency Type
                             </label>
                             <select
                                 name="emergency_type"
@@ -57,17 +57,17 @@ export default function Edit() {
                                 required
                                 className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                             >
-                                <option value="">اختر</option>
-                                <option value="حادث مروري">حادث مروري</option>
-                                <option value="إصابة خطيرة">إصابة خطيرة</option>
-                                <option value="حريق">حريق</option>
-                                <option value="حالة طبية طارئة">حالة طبية طارئة</option>
+                                <option value="">Select</option>
+                                <option value="Traffic Accident">Traffic Accident</option>
+                                <option value="Serious Injury">Serious Injury</option>
+                                <option value="Fire">Fire</option>
+                                <option value="Medical Emergency">Medical Emergency</option>
                             </select>
                         </div>
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                الموقع
+                                Location
                             </label>
                             <input
                                 type="text"
@@ -81,7 +81,7 @@ export default function Edit() {
 
                         <div>
                             <label className="mb-2 block text-sm font-medium text-gray-700">
-                                الوصف (اختياري)
+                                Description (Optional)
                             </label>
                             <textarea
                                 name="description"
@@ -98,13 +98,13 @@ export default function Edit() {
                                 disabled={isSubmitting}
                                 className="flex-1 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
                             >
-                                {isSubmitting ? 'جاري الحفظ...' : 'حفظ التعديلات'}
+                                {isSubmitting ? 'Saving...' : 'Save Changes'}
                             </button>
                             <Link
                                 href="/emergencies"
                                 className="flex-1 rounded-lg bg-gray-500 px-6 py-3 text-center font-medium text-white transition hover:bg-gray-600"
                             >
-                                إلغاء
+                                Cancel
                             </Link>
                         </div>
                     </form>

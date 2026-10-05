@@ -7,7 +7,7 @@ export default function AuthenticatedLayout({ children }) {
     const isAdmin = user?.type === 1;
 
     const logout = () => {
-        if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+        if (confirm('Are you sure you want to log out?')) {
             router.post('/logout');
         }
     };
@@ -19,41 +19,41 @@ export default function AuthenticatedLayout({ children }) {
                     <div className="flex justify-between h-16">
                         <div className="flex items-center">
                             <Link href="/dashboard" className="text-xl font-bold text-blue-600">
-                                🚑 أنقذني
+                                🚑 Save Me
                             </Link>
                         </div>
 
-                        <div className="flex items-center space-x-4 space-x-reverse">
+                        <div className="flex items-center space-x-4">
                             <Link href="/dashboard" className="text-gray-700 hover:text-blue-600 px-3 py-2">
-                                لوحة التحكم
+                                Dashboard
                             </Link>
                             <Link href="/about" className="text-gray-700 hover:text-blue-600 px-3 py-2">
-    من نحن
-</Link>
+                                About
+                            </Link>
                             <Link href="/emergencies" className="text-gray-700 hover:text-blue-600 px-3 py-2">
-                                الحالات
+                                Emergencies
                             </Link>
                             <Link href="/lessons" className="text-gray-700 hover:text-blue-600 px-3 py-2">
-                                الدروس
+                                Lessons
                             </Link>
                             <Link href="/quizzes" className="text-gray-700 hover:text-blue-600 px-3 py-2">
-                                الاختبارات
+                                Quizzes
                             </Link>
                             <Link href="/quiz-results" className="text-gray-700 hover:text-blue-600 px-3 py-2">
-                                نتائجي
+                                My Results
                             </Link>
 
                             <div className="border-r border-gray-300 h-8 mx-2"></div>
 
                             <span className="text-sm text-gray-600">
-                                {user?.name} {isAdmin && <span className="text-red-600 font-bold">(أدمن)</span>}
+                                {user?.name} {isAdmin && <span className="text-red-600 font-bold">(Admin)</span>}
                             </span>
 
                             <button
                                 onClick={logout}
                                 className="bg-red-500 text-white px-3 py-1.5 rounded text-sm hover:bg-red-600"
                             >
-                                خروج
+                                Logout
                             </button>
                         </div>
                     </div>

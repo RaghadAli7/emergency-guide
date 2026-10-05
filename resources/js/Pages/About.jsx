@@ -7,38 +7,38 @@ export default function About() {
 
     return (
         <>
-            <Head title="من نحن - أنقذني" />
+            <Head title="About - Save Me" />
 
-            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white" dir="rtl">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
                 {/* Header */}
                 <header className="bg-white shadow-sm">
                     <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between">
                             <Link href="/" className="flex items-center gap-2">
                                 <span className="text-3xl">🚑</span>
-                                <h1 className="text-2xl font-bold text-blue-600">أنقذني</h1>
+                                <h1 className="text-2xl font-bold text-blue-600">Save Me</h1>
                             </Link>
                             <div className="flex items-center gap-4">
                                 <Link href="/" className="text-gray-700 hover:text-blue-600">
-                                    الرئيسية
+                                    Home
                                 </Link>
                                 {isLoggedIn ? (
                                     <Link
                                         href="/dashboard"
                                         className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
                                     >
-                                        لوحة التحكم
+                                        Dashboard
                                     </Link>
                                 ) : (
                                     <>
                                         <Link href="/login" className="text-gray-700 hover:text-blue-600">
-                                            تسجيل الدخول
+                                            Login
                                         </Link>
                                         <Link
                                             href="/register"
                                             className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
                                         >
-                                            إنشاء حساب
+                                            Register
                                         </Link>
                                     </>
                                 )}
@@ -51,12 +51,13 @@ export default function About() {
                 <section className="py-20">
                     <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
                         <h2 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
-                            من نحن؟
+                            Who Are We?
                         </h2>
                         <p className="mx-auto max-w-3xl text-lg text-gray-600">
-                            نحن منصة "أنقذني"، منصة تعليمية تهدف إلى نشر الوعي بأهمية
-                            الإسعافات الأولية وتزويد الأفراد بالمعرفة والمهارات اللازمة
-                            للتصرف الصحيح في حالات الطوارئ.
+                            We are "Save Me", an educational platform aimed at raising
+                            awareness about the importance of first aid and providing
+                            individuals with the knowledge and skills needed to act
+                            correctly in emergency situations.
                         </p>
                     </div>
                 </section>
@@ -67,10 +68,10 @@ export default function About() {
                         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
                             <div>
                                 <h3 className="mb-6 text-3xl font-bold text-gray-900">
-                                    رسالتنا
+                                    Our Mission
                                 </h3>
                                 <p className="mb-6 text-lg text-gray-600">
-                                    نؤمن بأن كل شخص يمكنه أن يكون منقذاً. لذلك نهدف إلى:
+                                    We believe that everyone can be a lifesaver. Therefore, we aim to:
                                 </p>
                                 <ul className="space-y-3">
                                     <li className="flex items-start">
@@ -78,7 +79,7 @@ export default function About() {
                                             ✓
                                         </span>
                                         <span className="text-gray-700">
-                                            تعليم الإسعافات الأولية بطريقة بسيطة وواضحة.
+                                            Teach first aid in a simple and clear way.
                                         </span>
                                     </li>
                                     <li className="flex items-start">
@@ -86,7 +87,7 @@ export default function About() {
                                             ✓
                                         </span>
                                         <span className="text-gray-700">
-                                            توفير محتوى تعليمي شامل باللغة العربية.
+                                            Provide comprehensive educational content.
                                         </span>
                                     </li>
                                     <li className="flex items-start">
@@ -94,7 +95,7 @@ export default function About() {
                                             ✓
                                         </span>
                                         <span className="text-gray-700">
-                                            اختبارات تفاعلية لقياس مستوى المعرفة.
+                                            Offer interactive quizzes to measure knowledge.
                                         </span>
                                     </li>
                                     <li className="flex items-start">
@@ -102,7 +103,7 @@ export default function About() {
                                             ✓
                                         </span>
                                         <span className="text-gray-700">
-                                            شهادات إتمام لتشجيع التعلم المستمر.
+                                            Award completion certificates to encourage continuous learning.
                                         </span>
                                     </li>
                                 </ul>
@@ -125,19 +126,19 @@ export default function About() {
                                 <div className="mb-2 text-5xl font-bold text-white">
                                     +13
                                 </div>
-                                <p className="text-blue-100">حالة طارئة</p>
+                                <p className="text-blue-100">Emergency Cases</p>
                             </div>
                             <div>
                                 <div className="mb-2 text-5xl font-bold text-white">
                                     +25
                                 </div>
-                                <p className="text-blue-100">درس تعليمي</p>
+                                <p className="text-blue-100">Educational Lessons</p>
                             </div>
                             <div>
                                 <div className="mb-2 text-5xl font-bold text-white">
                                     +10
                                 </div>
-                                <p className="text-blue-100">اختبار تفاعلي</p>
+                                <p className="text-blue-100">Interactive Quizzes</p>
                             </div>
                         </div>
                     </div>
@@ -148,10 +149,10 @@ export default function About() {
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="mb-12 text-center">
                             <h3 className="mb-4 text-3xl font-bold text-gray-900">
-                                فريق العمل
+                                Our Team
                             </h3>
                             <p className="text-lg text-gray-600">
-                                الفريق الذي يعمل على تطوير هذه المنصة
+                                The team working on developing this platform
                             </p>
                         </div>
 
@@ -161,7 +162,7 @@ export default function About() {
                                     R
                                 </div>
                                 <h4 className="mb-2 text-xl font-bold text-gray-900">
-                                    رغد علي
+                                    Raghad Ali
                                 </h4>
                                 <p className="mb-4 text-gray-600">
                                     Full Stack Developer
@@ -197,24 +198,24 @@ export default function About() {
                 <section className="py-20">
                     <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
                         <h3 className="mb-6 text-3xl font-bold text-gray-900">
-                            هل أنت مستعد لإنقاذ حياة؟
+                            Are You Ready to Save a Life?
                         </h3>
                         <p className="mb-8 text-lg text-gray-600">
-                            انضم إلينا الآن وابدأ رحلتك في تعلم الإسعافات الأولية
+                            Join us now and start your journey in learning first aid
                         </p>
                         {!isLoggedIn ? (
                             <Link
                                 href="/register"
                                 className="inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-medium text-white hover:bg-blue-700"
                             >
-                                سجّل الآن مجاناً
+                                Register Now for Free
                             </Link>
                         ) : (
                             <Link
                                 href="/dashboard"
                                 className="inline-block rounded-lg bg-blue-600 px-8 py-4 text-lg font-medium text-white hover:bg-blue-700"
                             >
-                                اذهب إلى لوحة التحكم
+                                Go to Dashboard
                             </Link>
                         )}
                     </div>
@@ -222,7 +223,7 @@ export default function About() {
 
                 {/* Footer */}
                 <footer className="bg-gray-900 py-8 text-center text-gray-400">
-                    <p>© 2026 منصة أنقذني - جميع الحقوق محفوظة</p>
+                    <p>© 2026 Save Me Platform - All Rights Reserved</p>
                 </footer>
             </div>
         </>

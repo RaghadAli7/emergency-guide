@@ -9,101 +9,101 @@ class QuizSeeder extends Seeder
 {
     public function run(): void
     {
-        // اختبار 1: أساسيات الإسعافات الأولية
+        // Quiz 1: First Aid Basics
         $quiz1 = Quiz::create([
-            'title' => 'أساسيات الإسعافات الأولية',
-            'description' => 'اختبار شامل لأساسيات الإسعافات الأولية التي يجب على الجميع معرفتها',
+            'title' => 'First Aid Basics',
+            'description' => 'A comprehensive quiz on the basics of first aid that everyone should know',
         ]);
 
         $quiz1->questions()->createMany([
             [
-                'question' => 'ما هو أول شيء يجب فعله عند الوصول إلى موقع حادث؟',
-                'option1' => 'بدء الإنعاش القلبي الرئوي فورًا',
-                'option2' => 'تأمين المكان والتأكد من سلامتك الشخصية',
-                'option3' => 'تحريك المصاب إلى مكان أكثر راحة',
-                'option4' => 'إعطاء الماء للمصاب',
+                'question' => 'What is the first thing you should do when arriving at an accident scene?',
+                'option1' => 'Start CPR immediately',
+                'option2' => 'Secure the scene and ensure your personal safety',
+                'option3' => 'Move the injured person to a more comfortable place',
+                'option4' => 'Give water to the injured person',
                 'correct_option' => 2,
             ],
             [
-                'question' => 'كيف توقف النزيف الشديد من جرح؟',
-                'option1' => 'باستخدام مرهم مضاد حيوي',
-                'option2' => 'بالضغط المباشر على الجرح بضمادة نظيفة',
-                'option3' => 'بغسل الجرح بالماء البارد',
-                'option4' => 'بترك الجرح دون علاج',
+                'question' => 'How do you stop severe bleeding from a wound?',
+                'option1' => 'Using an antibiotic ointment',
+                'option2' => 'By applying direct pressure to the wound with a clean bandage',
+                'option3' => 'By washing the wound with cold water',
+                'option4' => 'By leaving the wound untreated',
                 'correct_option' => 2,
             ],
             [
-                'question' => 'ما هو الإجراء الصحيح لعلاج حروق من الدرجة الأولى؟',
-                'option1' => 'وضع الثلج مباشرة على الحرق',
-                'option2' => 'وضع الزبدة أو الزيت على الحرق',
-                'option3' => 'تبريد المنطقة بالماء الجاري لمدة 10-15 دقيقة',
-                'option4' => 'فرك المنطقة المحروقة',
+                'question' => 'What is the correct procedure for treating first-degree burns?',
+                'option1' => 'Applying ice directly to the burn',
+                'option2' => 'Applying butter or oil to the burn',
+                'option3' => 'Cooling the area with running water for 10-15 minutes',
+                'option4' => 'Rubbing the burned area',
                 'correct_option' => 3,
             ],
         ]);
 
-        // اختبار 2: الإنعاش القلبي الرئوي
+        // Quiz 2: Cardiopulmonary Resuscitation (CPR)
         $quiz2 = Quiz::create([
-            'title' => 'الإنعاش القلبي الرئوي (CPR)',
-            'description' => 'اختبر معرفتك بالإنعاش القلبي الرئوي للبالغين',
+            'title' => 'Cardiopulmonary Resuscitation (CPR)',
+            'description' => 'Test your knowledge of CPR for adults',
         ]);
 
         $quiz2->questions()->createMany([
             [
-                'question' => 'كم عدد ضغطات الصدر الموصى بها في الدقيقة؟',
-                'option1' => '60-80 ضغطة',
-                'option2' => '100-120 ضغطة',
-                'option3' => '140-160 ضغطة',
-                'option4' => '40-60 ضغطة',
+                'question' => 'How many chest compressions per minute are recommended?',
+                'option1' => '60-80 compressions',
+                'option2' => '100-120 compressions',
+                'option3' => '140-160 compressions',
+                'option4' => '40-60 compressions',
                 'correct_option' => 2,
             ],
             [
-                'question' => 'ما هو عمق ضغطات الصدر للبالغين؟',
-                'option1' => '1-2 سم',
-                'option2' => '3-4 سم',
-                'option3' => '5-6 سم',
-                'option4' => 'لا يهم العمق',
+                'question' => 'What is the depth of chest compressions for adults?',
+                'option1' => '1-2 cm',
+                'option2' => '3-4 cm',
+                'option3' => '5-6 cm',
+                'option4' => 'Depth does not matter',
                 'correct_option' => 3,
             ],
             [
-                'question' => 'ما هي النسبة بين ضغطات الصدر والتنفس الصناعي؟',
-                'option1' => '5 ضغطات لكل نفس',
-                'option2' => '15 ضغطة لكل نفسين',
-                'option3' => '30 ضغطة لكل نفسين',
-                'option4' => '50 ضغطة لكل نفس',
+                'question' => 'What is the ratio between chest compressions and rescue breaths?',
+                'option1' => '5 compressions per breath',
+                'option2' => '15 compressions per 2 breaths',
+                'option3' => '30 compressions per 2 breaths',
+                'option4' => '50 compressions per breath',
                 'correct_option' => 3,
             ],
         ]);
 
-        // اختبار 3: الحروق والجروح
+        // Quiz 3: Burns and Wounds
         $quiz3 = Quiz::create([
-            'title' => 'الحروق والجروح',
-            'description' => 'كيفية التعامل مع الحروق والجروح بأنواعها',
+            'title' => 'Burns and Wounds',
+            'description' => 'How to handle burns and wounds of all types',
         ]);
 
         $quiz3->questions()->createMany([
             [
-                'question' => 'ما هو الخطأ الشائع في علاج الحروق؟',
-                'option1' => 'استخدام الماء البارد',
-                'option2' => 'استخدام الزبدة أو الزيوت',
-                'option3' => 'تغطية الحرق بضمادة نظيفة',
-                'option4' => 'إعطاء مسكنات للألم',
+                'question' => 'What is a common mistake in treating burns?',
+                'option1' => 'Using cold water',
+                'option2' => 'Using butter or oils',
+                'option3' => 'Covering the burn with a clean bandage',
+                'option4' => 'Giving pain relievers',
                 'correct_option' => 2,
             ],
             [
-                'question' => 'ما هي علامات التهاب الجرح؟',
-                'option1' => 'احمرار وتورم',
-                'option2' => 'ألم يزداد مع الوقت',
-                'option3' => 'خروج صديد',
-                'option4' => 'جميع ما سبق',
+                'question' => 'What are the signs of wound infection?',
+                'option1' => 'Redness and swelling',
+                'option2' => 'Pain that increases over time',
+                'option3' => 'Pus discharge',
+                'option4' => 'All of the above',
                 'correct_option' => 4,
             ],
             [
-                'question' => 'ما هو الوقت الأقصى لوضع الثلج على الإصابة؟',
-                'option1' => '5 دقائق',
-                'option2' => '15-20 دقيقة',
-                'option3' => 'ساعة كاملة',
-                'option4' => 'حتى يزول الألم',
+                'question' => 'What is the maximum time to apply ice to an injury?',
+                'option1' => '5 minutes',
+                'option2' => '15-20 minutes',
+                'option3' => 'A full hour',
+                'option4' => 'Until the pain goes away',
                 'correct_option' => 2,
             ],
         ]);

@@ -24,7 +24,7 @@ export default function Take() {
             setResult(response.data);
         } catch (error) {
             console.error(error);
-            alert('حدث خطأ أثناء إرسال الإجابات');
+            alert('An error occurred while submitting answers');
         } finally {
             setIsSubmitting(false);
         }
@@ -33,13 +33,13 @@ export default function Take() {
     if (result) {
         return (
             <AuthenticatedLayout>
-                <Head title="نتيجة الاختبار" />
+                <Head title="Quiz Result" />
 
                 <div className="py-12">
                     <div className="mx-auto max-w-2xl px-4">
                         <div className="rounded-xl bg-white p-8 text-center shadow-lg">
                             <h1 className="mb-6 text-3xl font-bold text-gray-900">
-                                نتيجتك
+                                Your Result
                             </h1>
                             <div
                                 className={`mb-4 text-6xl font-bold ${
@@ -51,21 +51,20 @@ export default function Take() {
                                 {result.percentage}%
                             </div>
                             <p className="mb-6 text-xl text-gray-700">
-                                أجبت بشكل صحيح على {result.score} من {result.total}{' '}
-                                أسئلة
+                                You answered correctly {result.score} out of {result.total} questions
                             </p>
                             <div className="flex justify-center gap-4">
                                 <a
                                     href="/quizzes"
                                     className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white hover:bg-blue-700"
                                 >
-                                    العودة للاختبارات
+                                    Back to Quizzes
                                 </a>
                                 <a
                                     href="/quiz-results"
                                     className="rounded-lg bg-green-600 px-6 py-3 font-medium text-white hover:bg-green-700"
                                 >
-                                    عرض نتائجي
+                                    View My Results
                                 </a>
                             </div>
                         </div>
@@ -92,7 +91,7 @@ export default function Take() {
                                 className="rounded-xl bg-white p-6 shadow-lg"
                             >
                                 <h3 className="mb-4 text-lg font-semibold text-gray-800">
-                                    سؤال {index + 1}: {q.question}
+                                    Question {index + 1}: {q.question}
                                 </h3>
 
                                 <div className="space-y-2">
@@ -128,7 +127,7 @@ export default function Take() {
                             disabled={isSubmitting}
                             className="w-full rounded-lg bg-blue-600 py-4 text-lg font-bold text-white hover:bg-blue-700 disabled:opacity-50"
                         >
-                            {isSubmitting ? 'جاري الإرسال...' : 'إرسال الإجابات'}
+                            {isSubmitting ? 'Submitting...' : 'Submit Answers'}
                         </button>
                     </form>
                 </div>

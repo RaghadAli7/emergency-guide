@@ -8,8 +8,8 @@ export default function Dashboard() {
 
     const cards = [
         {
-            title: 'الحالات الطارئة',
-            desc: 'عرض وإدارة الحالات المبلغ عنها',
+            title: 'Emergency Cases',
+            desc: 'View and manage reported cases',
             href: '/emergencies',
             color: 'bg-red-500',
             bgColor: 'bg-red-50',
@@ -31,8 +31,8 @@ export default function Dashboard() {
             ),
         },
         {
-            title: 'الدروس التعليمية',
-            desc: 'تصفح الدروس التعليمية المتاحة',
+            title: 'Educational Lessons',
+            desc: 'Browse available educational lessons',
             href: '/lessons',
             color: 'bg-green-500',
             bgColor: 'bg-green-50',
@@ -54,8 +54,8 @@ export default function Dashboard() {
             ),
         },
         {
-            title: 'الاختبارات',
-            desc: 'حل الاختبارات واختبر معرفتك',
+            title: 'Quizzes',
+            desc: 'Take quizzes and test your knowledge',
             href: '/quizzes',
             color: 'bg-purple-500',
             bgColor: 'bg-purple-50',
@@ -77,8 +77,8 @@ export default function Dashboard() {
             ),
         },
         {
-            title: 'نتائجي',
-            desc: 'عرض نتائج الاختبارات السابقة',
+            title: 'My Results',
+            desc: 'View your previous quiz results',
             href: '/quiz-results',
             color: 'bg-orange-500',
             bgColor: 'bg-orange-50',
@@ -103,23 +103,23 @@ export default function Dashboard() {
 
     return (
         <AuthenticatedLayout>
-            <Head title="لوحة التحكم" />
+            <Head title="Dashboard" />
 
             <div className="py-12">
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    {/* ترحيب */}
+                    {/* Welcome */}
                     <div className="mb-8">
                         <h1 className="mb-2 text-3xl font-bold text-gray-900">
-                            مرحباً، {user?.name} 👋
+                            Welcome, {user?.name} 👋
                         </h1>
                         <p className="text-gray-600">
                             {isAdmin
-                                ? 'لديك صلاحيات الأدمن - يمكنك إدارة المحتوى بالكامل'
-                                : 'مرحباً بك في منصة الإسعافات الأولية'}
+                                ? 'You have admin privileges - you can fully manage the content'
+                                : 'Welcome to the First Aid Platform'}
                         </p>
                     </div>
 
-                    {/* بطاقات الإجراءات */}
+                    {/* Action Cards */}
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {cards.map((card, index) => (
                             <Link
@@ -128,7 +128,7 @@ export default function Dashboard() {
                                 className="group block overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                             >
                                 <div className="p-6">
-                                    {/* الأيقونة */}
+                                    {/* Icon */}
                                     <div
                                         className={`${card.bgColor} ${card.textColor} mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-transform group-hover:scale-110`}
                                     >
@@ -146,13 +146,13 @@ export default function Dashboard() {
                                 <div
                                     className={`${card.bgColor} ${card.textColor} border-t border-gray-100 px-6 py-3 text-sm font-medium`}
                                 >
-                                    انتقل ←
+                                    Go →
                                 </div>
                             </Link>
                         ))}
                     </div>
 
-                    {/* قسم صلاحيات الأدمن */}
+                    {/* Admin Privileges Section */}
                     {isAdmin && (
                         <div className="mt-8 flex items-start rounded-lg border-l-4 border-red-500 bg-red-50 p-6">
                             <div className="mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
@@ -172,18 +172,18 @@ export default function Dashboard() {
                             </div>
                             <div>
                                 <h3 className="mb-2 text-lg font-bold text-red-800">
-                                    صلاحيات الأدمن
+                                    Admin Privileges
                                 </h3>
                                 <p className="text-sm text-red-700">
-                                    يمكنك إضافة وتعديل وحذف الحالات الطارئة والدروس
-                                    والاختبارات من خلال الصفحات المخصصة. تظهر لك أزرار
-                                    الإدارة في كل صفحة.
+                                    You can add, edit, and delete emergency cases, lessons,
+                                    and quizzes through the dedicated pages. Admin buttons
+                                    appear on every page.
                                 </p>
                             </div>
                         </div>
                     )}
 
-                    {/* قسم النصيحة للمستخدم العادي */}
+                    {/* Tip Section for Regular Users */}
                     {!isAdmin && (
                         <div className="mt-8 flex items-start rounded-lg border-l-4 border-blue-500 bg-blue-50 p-6">
                             <div className="mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
@@ -203,12 +203,12 @@ export default function Dashboard() {
                             </div>
                             <div>
                                 <h3 className="mb-2 text-lg font-bold text-blue-800">
-                                    نصيحة
+                                    Tip
                                 </h3>
                                 <p className="text-sm text-blue-700">
-                                    ابدأ بحل الاختبارات للحصول على شهادة الإسعافات
-                                    الأولية. تحتاج لاجتياز 3 اختبارات بنسبة 60% على
-                                    الأقل.
+                                    Start by taking quizzes to earn your First Aid
+                                    certificate. You need to pass 3 quizzes with at least
+                                    60%.
                                 </p>
                             </div>
                         </div>
