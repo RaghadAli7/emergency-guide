@@ -106,3 +106,9 @@ You can run this project using Docker and Docker Compose.
 
 ### quiz-results
 ![quiz-results](screenshots/quiz-results.png)
+
+### quis-take
+![quis-take](screenshots/quiz-take.png)
+
+### about
+![about](screenshots/about.png)
