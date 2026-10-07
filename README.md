@@ -8,11 +8,9 @@ A full-stack web application for learning and managing first-aid procedures, bui
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwind-css&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
----
-
 ## 📋 About the Project
 
-**Emergency Guide** is a comprehensive platform that helps users learn first-aid procedures, manage emergency cases, and test their knowledge through interactive quizzes. The system includes role-based access control (Admin/User) and a certificate system for users who pass 3 or more quizzes.
+**Emergency Guide** (Save Me) is a comprehensive platform that helps users learn first-aid procedures, manage emergency cases, and test their knowledge through interactive quizzes. The system includes role-based access control (Admin/User) and a certificate system for users who pass 3 or more quizzes.
 
 This project was built from scratch using modern web technologies and demonstrates full-stack development skills, including:
 
@@ -21,8 +19,6 @@ This project was built from scratch using modern web technologies and demonstrat
 - Database design with MySQL
 - Authentication and authorization
 - Responsive UI with Tailwind CSS
-
----
 
 ## ✨ Features
 
@@ -44,6 +40,7 @@ This project was built from scratch using modern web technologies and demonstrat
 ## 🛠 Technologies Used
 
 ### Backend
+
 - **Laravel 11** — PHP framework
 - **MySQL** — Database
 - **Laravel Breeze** — Authentication scaffolding
@@ -51,14 +48,15 @@ This project was built from scratch using modern web technologies and demonstrat
 - **Pest** — Testing framework
 
 ### Frontend
+
 - **React 18** — UI library
 - **Inertia.js** — SPA bridge between Laravel and React
 - **Tailwind CSS** — Styling
 - **Vite** — Build tool
-
 ## 🚀 Installation
 
 ### Prerequisites
+
 - PHP 8.2+
 - Composer
 - Node.js 18+ & npm
@@ -122,6 +120,7 @@ Register a new account and start exploring! 🎉
 You can also run this project using Docker and Docker Compose.
 
 ### Prerequisites
+
 - Docker Desktop installed
 
 ### Steps
@@ -147,11 +146,15 @@ You can also run this project using Docker and Docker Compose.
 
     docker-compose down
 
-## 📸 Screenshots
+    ## 📸 Screenshots
 
 ### Welcome Page
 
 ![Welcome Page](./screenshots/welcome.png)
+
+### About Page
+
+![About Page](./screenshots/about.png)
 
 ### Dashboard
 
@@ -159,15 +162,19 @@ You can also run this project using Docker and Docker Compose.
 
 ### Emergency Cases
 
-![Emergency Cases](./screenshots/emergency-cases.png)
+![Emergency Cases](./screenshots/emergencies.png)
 
-### Lessons
+### Educational Lessons
 
 ![Lessons](./screenshots/lessons.png)
 
 ### Quizzes
 
 ![Quizzes](./screenshots/quizzes.png)
+
+### Quiz Taking
+
+![Quiz Take](./screenshots/quiz-take.png)
 
 ### Quiz Results
 
@@ -177,27 +184,16 @@ You can also run this project using Docker and Docker Compose.
 
 ![Certificate](./screenshots/certificate.png)
 
-### About Page
-
-![About](./screenshots/about.png)
-
-> 💡 **Note:** Add real screenshots to the `screenshots/` folder and update paths if needed.
-
----
-
 ## 👤 Author
 
 **Raghad Ali**
+
 - GitHub: [@RaghadAli7](https://github.com/RaghadAli7)
 - Email: raghad77aliali@gmail.com
-
----
 
 ## 📄 License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
----
 
 ## 🙏 Acknowledgments
 
